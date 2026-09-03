@@ -2200,11 +2200,87 @@ img {
 
 @media (max-width: 640px) {
   .app-shell {
-    padding: 18px;
+    padding: 12px;
   }
 
   .topbar {
-    padding: 14px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 20px;
+    top: 8px;
+  }
+
+  .topbar:has(.menu) {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .topbar:has(.menu) .search-box {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .topbar:has(.menu) .menu {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .topbar:has(.menu) > .cart-button {
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.82rem;
+  }
+
+  .menu {
+    padding: 5px;
+  }
+
+  .menu a,
+  .menu a:hover,
+  .menu a.active {
+    padding: 8px 5px;
+    font-size: 0.9rem;
+  }
+
+  .cart-button {
+    gap: 6px;
+    padding: 7px 9px 7px 7px;
+    font-size: 0.85rem;
+  }
+
+  .cart-button-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cart-count {
+    min-width: 23px;
+    height: 23px;
+  }
+
+  .search-box input {
+    padding: 10px 14px;
   }
 
   .hero-copy h1 {

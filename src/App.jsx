@@ -8,13 +8,15 @@ import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import { goTo } from "./utils/index.js";
+import logo from "./assets/logo.svg";
+import cartIcon from "../assets/cart-03-gradient-modern.svg";
 
 function Header({ activePage, search, setSearch, cartCount, onCart }) {
   return (
     <header className="topbar">
       <div className="brand">
         <img
-          src="./assets/logo.svg"
+          src={logo}
           alt="Mellow Shop Logo"
           className="brand-logo"
         />
@@ -61,7 +63,7 @@ function Header({ activePage, search, setSearch, cartCount, onCart }) {
           aria-label="เปิดหน้าตะกร้าสินค้า"
         >
           <img
-            src="./assets/cart-03-gradient-modern.svg"
+            src={cartIcon}
             alt="ไอคอนตะกร้า"
             className="cart-button-icon"
           />
