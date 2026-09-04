@@ -1,5 +1,6 @@
 import { products } from "../utils/data.js";
 import { getCartTotal, saveCart } from "../utils/cart.js";
+import Icon from "./Icon.jsx";
 
 const formatPrice = (value) => `฿${value.toLocaleString("en-US")}`;
 
@@ -35,9 +36,9 @@ export default function CartDrawer({ cart, setCart, open, close }) {
   return (
     <aside className={`cart-drawer ${open ? "open" : ""}`} aria-hidden={!open}>
       <div className="cart-header">
-        <h3>ตะกร้าสินค้า</h3>
+        <h3><Icon name="cart" size={18} /> ตะกร้าสินค้า</h3>
         <button onClick={close} aria-label="ปิดตะกร้า">
-          ✕
+          <Icon name="close" size={16} />
         </button>
       </div>
       <div className="cart-content">

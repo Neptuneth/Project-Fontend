@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { products } from "../utils/data.js";
 import { saveCart } from "../utils/cart.js";
+import Icon from "../components/Icon.jsx";
 
 const formatPrice = (value) => `฿${value.toLocaleString("en-US")}`;
 
@@ -99,7 +100,7 @@ export default function CartPage({ cart, setCart }) {
 
       {!cartItems.length ? (
         <section className="cart-empty-state">
-          <div className="cart-empty-icon">🛒</div>
+          <div className="cart-empty-icon"><Icon name="cart" size={42} /></div>
           <h2>ตะกร้าของคุณยังว่างอยู่</h2>
           <p>เติมสินค้าที่ชอบไว้ที่นี่ แล้วกลับมาสั่งซื้อได้ทุกเมื่อ</p>
           <a href="?page=home" className="primary-btn">

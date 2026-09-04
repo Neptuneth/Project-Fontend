@@ -2,6 +2,7 @@ import { useState } from "react";
 import { products } from "../utils/data.js";
 import ProductCard from "../components/ProductCard.jsx";
 import { formatPrice, goTo } from "../utils/index.js";
+import Icon from "../components/Icon.jsx";
 
 const starterComments = [
   {
@@ -65,19 +66,6 @@ export default function ProductPage({ addToCart, productId }) {
     );
   return (
     <main>
-      <section className="page-header">
-        <h1>รายละเอียดสินค้า</h1>
-        <p>ดูข้อมูลสินค้าเพิ่มเติมก่อนตัดสินใจสั่งซื้อได้ที่นี่</p>
-      </section>
-      <section className="product-hero">
-        <div>
-          <h2>สะดวก เลือกซื้อได้ทันที</h2>
-          <p>
-            หน้ารายละเอียดนี้ออกแบบให้เข้าใจง่าย
-            พร้อมข้อมูลครบและปุ่มสั่งซื้อที่ชัดเจน
-          </p>
-        </div>
-      </section>
       <section className="product-detail">
         <div className="product-page-card">
           <div className="product-media-column">
@@ -93,7 +81,7 @@ export default function ProductPage({ addToCart, productId }) {
                 {comments.map((comment) => (
                   <article key={comment.id} className="comment-item">
                     <div className="comment-item-head">
-                      <strong>{comment.name}</strong>
+                      <strong><span className="comment-rating"><Icon name="star" size={12} /> 5</span> {comment.name}</strong>
                       <span>{comment.time}</span>
                     </div>
                     <p>{comment.message}</p>
@@ -127,10 +115,10 @@ export default function ProductPage({ addToCart, productId }) {
               <span className="product-tag">{product.badge}</span>
               <span className="product-shipping">{product.shipping}</span>
             </div>
-            <span className="category">{product.category}</span>
+            <span className="category">Mellow Shop · {product.category}</span>
             <h1>{product.name}</h1>
             <div className="product-rating-row">
-              <strong>⭐ {product.rating}</strong>
+              <strong><Icon name="star" size={15} /> {product.rating}</strong>
               <span>{product.sold.toLocaleString()} ขายแล้ว</span>
             </div>
             <p className="product-description">{product.description}</p>
@@ -163,8 +151,11 @@ export default function ProductPage({ addToCart, productId }) {
               </button>
             </div>
             <div className="seller-card">
-              <h3>ร้านค้า</h3>
-              <p>Mellow Shop Store · ตอบกลับเร็ว · ส่งไวภายใน 24 ชั่วโมง</p>
+              <div>
+                <span>ร้านค้า</span>
+                <h3>Mellow Shop Store · ตอบกลับเร็ว · ส่งไวภายใน 24 ชั่วโมง</h3>
+              </div>
+              <a href="?page=home">ดูร้านค้า</a>
             </div>
             <div className="product-meta-list">
               <div>
@@ -184,15 +175,15 @@ export default function ProductPage({ addToCart, productId }) {
         </div>
         <section className="detail-highlights">
           <article>
-            <h3>🚚 ส่งไว</h3>
+            <h3><Icon name="truck" /> ส่งไว</h3>
             <p>จัดส่งภายใน 24 ชั่วโมง</p>
           </article>
           <article>
-            <h3>✅ รับประกัน</h3>
+            <h3><Icon name="check" /> รับประกัน</h3>
             <p>คืนได้ภายใน 7 วัน</p>
           </article>
           <article>
-            <h3>💬 ติดต่อง่าย</h3>
+            <h3><Icon name="message" /> ติดต่อง่าย</h3>
             <p>ยินดีตอบคำถามก่อนซื้อ</p>
           </article>
         </section>

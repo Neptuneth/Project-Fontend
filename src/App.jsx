@@ -52,25 +52,19 @@ function Header({ activePage, search, setSearch, cartCount, onCart }) {
           ติดต่อ
         </a>
       </nav>
-      {activePage === "checkout" ? (
-        <a href="?page=home" className="cart-button compact-link">
-          กลับหน้าร้าน
-        </a>
-      ) : (
-        <button
-          className="cart-button"
-          onClick={onCart}
-          aria-label="เปิดหน้าตะกร้าสินค้า"
-        >
-          <img
-            src={cartIcon}
-            alt="ไอคอนตะกร้า"
-            className="cart-button-icon"
-          />
-          <span>ตะกร้า</span>
-          <span className="cart-count">{cartCount}</span>
-        </button>
-      )}
+      <button
+        className="cart-button"
+        onClick={onCart}
+        aria-label="เปิดหน้าตะกร้าสินค้า"
+      >
+        <img
+          src={cartIcon}
+          alt="ไอคอนตะกร้า"
+          className="cart-button-icon"
+        />
+        <span>ตะกร้า</span>
+        <span className="cart-count">{cartCount}</span>
+      </button>
     </header>
   );
 }
@@ -158,7 +152,7 @@ export default function App() {
         onCart={() => goTo("cart")}
       />
       {content}
-      <Footer />
+      {page !== "checkout" && <Footer />}
       {page !== "checkout" && page !== "cart" && (
         <CartDrawer
           cart={cart}

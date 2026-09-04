@@ -1,4 +1,5 @@
 import { formatPrice } from "../utils/index.js";
+import Icon from "./Icon.jsx";
 
 export default function ProductCard({ product, addToCart }) {
   return (
@@ -14,7 +15,7 @@ export default function ProductCard({ product, addToCart }) {
         <p>{product.description}</p>
       </div>
       <div className="product-rating">
-        <strong>⭐ {product.rating}</strong>
+        <strong><Icon name="star" size={15} /> {product.rating}</strong>
         <span>{product.sold.toLocaleString()} ขายแล้ว</span>
       </div>
       <div className="product-card-footer">

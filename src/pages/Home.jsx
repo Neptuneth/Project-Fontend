@@ -1,5 +1,6 @@
 import { products } from "../utils/data.js";
 import ProductCard from "../components/ProductCard.jsx";
+import Icon from "../components/Icon.jsx";
 
 const categories = [...new Set(products.map((product) => product.category))];
 
@@ -20,7 +21,7 @@ export default function Home({
   return (
     <main>
       <section className="promo-strip">
-        <span>🎁 โปรโมชั่นปลายเดือน</span>
+        <span><Icon name="gift" /> โปรโมชั่นปลายเดือน</span>
         <span>สินค้าตัวใหม่พร้อมส่งใน 24 ชั่วโมง</span>
         <span>รับประกันความพอใจ 7 วัน</span>
       </section>
@@ -41,9 +42,9 @@ export default function Home({
             </a>
           </div>
           <div className="hero-badges">
-            <span>🚚 ส่งไว</span>
-            <span>⭐ 4.8/5 จากลูกค้า</span>
-            <span>🔒 ปลอดภัย</span>
+            <span><Icon name="truck" /> ส่งไว</span>
+            <span><Icon name="star" /> 4.8/5 จากลูกค้า</span>
+            <span><Icon name="shield" /> ปลอดภัย</span>
           </div>
         </div>
         <div className="hero-image">
